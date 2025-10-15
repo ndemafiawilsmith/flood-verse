@@ -26,9 +26,10 @@ return new class extends Migration
             $table->index('severity');
             $table->index('status');
         });
-
-        // Add check constraint for severity (for MySQL 8+, PostgreSQL)
-        DB::statement("ALTER TABLE alerts ADD CONSTRAINT alerts_severity_check CHECK (severity IN ('low','medium','high','critical'))");
+        // Add check constraint for databases that support it
+        if (DB::getDriverName() !== 'sqlite') {
+            DB::statement("ALTER TABLE alerts ADD CONSTRAINT alerts_severity_check CHECK (severity IN ('low','medium','high','critical'))");
+        }
     }
 
     /**
