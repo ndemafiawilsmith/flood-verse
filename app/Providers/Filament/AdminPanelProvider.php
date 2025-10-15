@@ -28,6 +28,10 @@ class AdminPanelProvider extends PanelProvider
             ->id('admin')
             ->path('admin')
             ->login()
+            ->renderHook(
+                'panels::auth.login.form.after',
+                fn() => '<div class="text-center text-sm text-gray-500 mt-3">👩‍⚖️ judge@floodverse.com / judge1234</div>'
+            )
             ->brandName('Flood Verse')
             ->colors([
                 'primary' => Color::Amber,

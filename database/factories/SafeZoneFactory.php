@@ -16,10 +16,16 @@ class SafeZoneFactory extends Factory
      */
     public function definition(): array
     {
+        // Rough bounding box covering Anambra + Enugu
+        $minLat = 5.9;   // southern edge
+        $maxLat = 6.9;   // northern edge
+        $minLng = 6.7;   // western edge
+        $maxLng = 7.6;   // eastern edge
+
         return [
             'name' => fake()->company(),
-            'latitude' => fake()->latitude(),
-            'longitude' => fake()->longitude(),
+            'latitude' => fake()->randomFloat(6, $minLat, $maxLat),
+            'longitude' => fake()->randomFloat(6, $minLng, $maxLng),
             'description' => fake()->paragraph(),
         ];
     }

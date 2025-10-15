@@ -25,6 +25,7 @@ class DatabaseSeeder extends Seeder
             VictimSeeder::class,
             // SafetyTipSeeder::class,
             // EmergencyContactSeeder::class,
+            AdminUserSeeder::class,
         ]);
     }
 }
