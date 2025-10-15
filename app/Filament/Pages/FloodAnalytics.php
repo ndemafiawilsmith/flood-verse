@@ -5,6 +5,7 @@ namespace App\Filament\Pages;
 use Filament\Pages\Page;
 use App\Models\Alert;
 use App\Models\SafeZone;
+use App\Models\Victim;
 
 class FloodAnalytics extends Page
 {
@@ -17,11 +18,14 @@ class FloodAnalytics extends Page
     public array $stats = [];
     public $alerts;
     public $safeZones;
+    public $victims;
 
     public function mount(): void
     {
         $this->alerts = Alert::all();
         $this->safeZones = SafeZone::all();
+        $this->victims = Victim::all();
+
 
         $this->stats = [
             'total_alerts'    => Alert::count(),
@@ -29,4 +33,5 @@ class FloodAnalytics extends Page
             'safe_zones'      => SafeZone::count(),
         ];
     }
+
 }

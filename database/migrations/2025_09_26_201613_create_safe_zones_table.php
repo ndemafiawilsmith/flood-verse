@@ -15,15 +15,14 @@ return new class extends Migration
             $table->id();
             $table->string('name');
             $table->text('description')->nullable();
-            $table->decimal('gps_lat', 10, 8);
-            $table->decimal('gps_lng', 11, 8);
-            $table->string('address');
+
+            // ✅ Add correct coordinate columns
+            $table->decimal('latitude', 10, 6)->nullable();
+            $table->decimal('longitude', 10, 6)->nullable();
+
+            $table->string('address')->nullable();
             $table->integer('capacity')->nullable();
             $table->timestamps();
-
-            // Indexes
-            $table->index(['gps_lat', 'gps_lng']);
-            $table->index('address');
         });
     }
 

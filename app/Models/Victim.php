@@ -16,6 +16,8 @@ class Victim extends Model
         'contact',
         'location',
         'safe_zone_id',
+        'latitude',
+        'longitude',
     ];
 
     public function safeZone()

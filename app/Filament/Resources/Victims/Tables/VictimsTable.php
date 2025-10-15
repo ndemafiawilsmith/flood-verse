@@ -25,6 +25,12 @@ class VictimsTable
                     ->searchable(),
                 TextColumn::make('location')
                     ->searchable(),
+                TextColumn::make('latitude')
+                    ->numeric()
+                    ->sortable(),
+                TextColumn::make('longitude')
+                    ->numeric()
+                    ->sortable(),
                 TextColumn::make('safe_zone_id')
                     ->numeric()
                     ->sortable(),

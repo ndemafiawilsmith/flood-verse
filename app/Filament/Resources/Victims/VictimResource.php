@@ -18,7 +18,9 @@ class VictimResource extends Resource
 {
     protected static ?string $model = Victim::class;
 
-    protected static string|BackedEnum|null $navigationIcon = Heroicon::UserGroup;
+    protected static string|BackedEnum|null $navigationIcon = Heroicon::OutlinedRectangleStack;
+
+    protected static ?string $recordTitleAttribute = 'Victim';
 
     public static function form(Schema $schema): Schema
     {

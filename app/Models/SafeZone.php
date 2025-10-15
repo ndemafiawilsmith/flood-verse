@@ -14,5 +14,7 @@ class SafeZone extends Model
         'latitude',
         'longitude',
         'description',
+        'address',
+        'capacity',
     ];
 }
