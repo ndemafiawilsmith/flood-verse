@@ -63,7 +63,7 @@ Route::post('/admin/flood/selection', function (Request $request) {
 
     // ✅ Send SMS alerts using Termii
     $apiKey = env('TERMII_API_KEY'); // store this safely in .env
-    $senderId = 'FloodAlert'; // your Termii sender ID
+    $senderId = 'FloodVerse'; // your Termii sender ID
     $termiiUrl = 'https://api.ng.termii.com/api/sms/send';
 
     foreach ($victims as $victim) {
@@ -155,7 +155,7 @@ function formatPhone($number)
 
 Route::get('/admin/test-sms', function () {
     $apiKey = env('TERMII_API_KEY');
-    $senderId = 'N-Alert'; // or env('TERMII_SENDER_ID', 'FloodAlert')
+    $senderId = 'FloodVerse'; // or env('TERMII_SENDER_ID', 'FloodAlert')
     $termiiUrl = 'https://api.ng.termii.com/api/sms/send';
 
     // 🔧 Replace with your real phone number for testing
